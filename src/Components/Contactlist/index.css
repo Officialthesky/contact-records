@@ -1,17 +1,29 @@
 .contactList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: brown;
-}
-.contactInfo {
-  width: 100%;
+  width: 80vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: #3f3f3f;
+  flex-wrap: wrap;
+}
+.contactInfo {
+  min-width: 400px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  background-color: #efefe7;
+  margin: 10px;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 10px;
+  position: relative;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.contactInfo span {
+  color: #374151;
 }
 button {
   width: 100px;
@@ -24,4 +36,22 @@ button {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   margin-bottom: 15px;
+}
+.deleteContact {
+  font-size: 20px;
+  opacity: 0.4;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.updateContact {
+  font-size: 20px;
+  opacity: 0.4;
+  position: absolute;
+  bottom: 5px;
+  right: 25px;
+}
+.deleteContact:hover,
+.updateContact:hover {
+  opacity: 0.9;
 }

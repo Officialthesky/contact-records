@@ -3,6 +3,9 @@ import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addContactAction } from "../../Redux/actions/contactAction";
 import { updateContactAction } from "../../Redux/actions/contactAction";
+import { AiFillDelete } from "react-icons/ai";
+import { RiEditBoxFill } from "react-icons/ri";
+
 export default function Contactlist() {
   const dispatch = useDispatch();
 
@@ -26,11 +29,23 @@ export default function Contactlist() {
       {contact.map((item, index) => {
         return (
           <div key={index} className="contactInfo">
-            <h1>{item.firstname}</h1>
-            <h1>{item.number}</h1>
-            <h1>{item.email}</h1>
-            <button onClick={() => deleteContact(item)}>Delete</button>
-            <button onClick={() => updateContact(item)}>Update</button>
+            <h1>
+              Name:<span>{item.firstname}</span>
+            </h1>
+            <h1>
+              Mob. No.<span>{item.number}</span>
+            </h1>
+            <h1>
+              Email:<span>{item.email}</span>
+            </h1>
+            <AiFillDelete
+              onClick={() => deleteContact(item)}
+              className="deleteContact"
+            />
+            <RiEditBoxFill
+              onClick={() => updateContact(item)}
+              className="updateContact"
+            />
           </div>
         );
       })}

@@ -118,30 +118,28 @@ export default function Header() {
 
   return (
     <div className="inputHeader">
-      <h1>
-        <input
-          type="text"
-          value={firstname}
-          onChange={saveName}
-          placeholder="Enter your name"
-        />
-        <input
-          type="number"
-          value={number}
-          onChange={saveNumber}
-          placeholder="Enter your number"
-        />
-        <input
-          type="email"
-          value={email}
-          onChange={saveEmail}
-          placeholder="Enter your email"
-        />
+      <input
+        type="text"
+        value={firstname}
+        onChange={saveName}
+        placeholder="Enter your name"
+      />
+      <input
+        type="number"
+        value={number}
+        onChange={saveNumber}
+        placeholder="Enter your number"
+      />
+      <input
+        type="email"
+        value={email}
+        onChange={saveEmail}
+        placeholder="Enter your email"
+      />
 
-        <button onClick={updateContact.number ? editContact : addContactList}>
-          {updateContact.number ? "Edit" : "Add"}
-        </button>
-      </h1>
+      <button onClick={updateContact.number ? editContact : addContactList}>
+        {updateContact.number ? "Edit" : "Add"}
+      </button>
     </div>
   );
 }

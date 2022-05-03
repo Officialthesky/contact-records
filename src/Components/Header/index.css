@@ -5,10 +5,18 @@
 }
 
 .inputHeader {
-  background-color: blue;
-  height: 30vh;
+  background-color: #b5d0c7;
+  min-height: 100vh;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.inputHeader input {
+  width: 240px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 8px;
+  border: 0px;
 }
