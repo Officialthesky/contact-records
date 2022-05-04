@@ -6,7 +6,7 @@ import { updateContactAction } from "../../Redux/actions/contactAction";
 import { AiFillDelete } from "react-icons/ai";
 import { RiEditBoxFill } from "react-icons/ri";
 
-export default function Contactlist() {
+export default function ContactList() {
   const dispatch = useDispatch();
 
   // number reducer se lete hain ... matlab yha kuch bhi ho reducer se lete hain
