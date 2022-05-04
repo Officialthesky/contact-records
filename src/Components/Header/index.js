@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import findingLengthOfString from "../../utils/helper";
+import findingLengthOfString, { validateName } from "../../utils/helper";
 import { validateEmail } from "../../utils/helper";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,6 +30,7 @@ export default function Header() {
   const numberAlreadyExist = contact.filter(
     (i) => parseInt(i.number) === parseInt(number)
   );
+  const emailAlreadyExist = contact.filter((i) => i.email === email);
 
   const addContactList = () => {
     // firstname's length
@@ -45,6 +46,12 @@ export default function Header() {
       alert("Please enter a valid fullname");
       return;
     }
+    const firstnameCharacterCheck = validateName(firstname);
+    if (firstnameCharacterCheck === true) {
+    } else {
+      alert("Please enter valid fullname");
+      return;
+    }
 
     let emailIdLength = findingLengthOfString(email);
     if (emailIdLength === 0) {
@@ -58,14 +65,22 @@ export default function Header() {
       alert("Please enter valid email id");
       return;
     }
+    if (emailAlreadyExist.length > 0) {
+      alert("Email already exist ");
+      return;
+    }
     let mobileNumberLength = findingLengthOfString(number);
     if (mobileNumberLength === 0) {
       alert("Mobile number can't be empty");
       return;
     }
+    if (mobileNumberLength < 10) {
+      alert("Mobile number can't be less than 10 digit");
+      return;
+    }
 
     if (mobileNumberLength > 10) {
-      alert("Mobile number can't be more than 10 characters.");
+      alert("Mobile number can't be more than 10 digit.");
       return;
     }
 
