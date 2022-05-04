@@ -107,18 +107,17 @@ export default function Header() {
     setNumber("");
     setEmail("");
   };
-
   useEffect(() => {
     setNumber(updateContact.number);
     setFirstname(updateContact.firstname);
     setEmail(updateContact.email);
-  }, [updateContact.number]);
+  }, [updateContact.number, updateContact.email, updateContact.firstname]);
 
   //how to update objects in the array
   const editContact = () => {
     let foundIndex = contact.findIndex(
       (i) =>
-        parseInt(i.number || i.firstname || i.email) ==
+        parseInt(i.number || i.firstname || i.email) ===
         parseInt(
           updateContact.number || updateContact.firstname || updateContact.email
         )
